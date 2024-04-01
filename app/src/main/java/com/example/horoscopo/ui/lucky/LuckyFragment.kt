@@ -16,7 +16,7 @@ class LuckyFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentLuckyBinding.inflate(layoutInflater,container,false)
         return binding.root
     }

@@ -15,7 +15,7 @@ class HoroscopeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHoroscopeBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
