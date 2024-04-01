@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Horoscopo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Bottom Nav-->
+    <string name="horoscope_item_menu">Horoscopo</string>
+    <string name="lucky_item_menu">Suerte</string>
+    <string name="palmistry_item_menu">Palmas</string>
+
+</resources>
