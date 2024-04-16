@@ -14,7 +14,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/backgrounds/scenic"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:padding="30dp"
+        android:background="@color/primaryDark"/>
+
+    <ImageView
+        android:id="@+id/ibBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back_arrow"
+        android:padding="20dp"
+        android:contentDescription="@string/sign_acuario"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/tvHoroscopeName"
@@ -31,9 +43,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/TextBody"
+        android:gravity="center"
         tools:text="Cancer asdad asd asd adasd asd asd asd  asdasdasd asd sad asd adasd asda sad asd asda asdads asd adad asdasd aasdasdasd asd "
         app:layout_constraintTop_toBottomOf="@id/tvHoroscopeName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvErrorMessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/error_message"
+        android:gravity="center"
+        style="@style/TextBody"
+        android:background="@color/white"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

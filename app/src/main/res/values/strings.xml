@@ -21,4 +21,7 @@
     <string name="sign_tauro">Tauro</string>
     <string name="sign_virgo">Virgo</string>
 
+    <!--Messages-->
+    <string name="error_message">Ocurrio un error inesperado!</string>
+
 </resources>

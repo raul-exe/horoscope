@@ -23,15 +23,24 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
+            isDebuggable = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String","BASE_URL","\"https://newastro.vercel.app/\"")
+            resValue("string","AppName","HoroscApp")
+        }
+        debug {
+            isDebuggable = true
+            buildConfigField("String","BASE_URL","\"https://newastro.vercel.app/\"")
+            resValue("string","AppName","[DEBUG] HoroscApp")
         }
     }
 
     buildFeatures{
         viewBinding = true
+        buildConfig = true
     }
 
     compileOptions {
@@ -60,8 +69,11 @@ dependencies {
     implementation ("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation ("androidx.navigation:navigation-ui-ktx:$navVersion")
     // HILT
-    implementation ("com.google.dagger:hilt-android:2.44")
-    kapt ("com.google.dagger:hilt-compiler:2.44")
+    implementation ("com.google.dagger:hilt-android:2.48")
+    kapt ("com.google.dagger:hilt-compiler:2.48")
+    // Ok HTTP
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
     // Test
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
