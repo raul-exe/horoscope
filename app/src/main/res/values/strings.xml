@@ -23,5 +23,6 @@
 
     <!--Messages-->
     <string name="error_message">Ocurrio un error inesperado!</string>
+    <string name="share">Compartir</string>
 
 </resources>
