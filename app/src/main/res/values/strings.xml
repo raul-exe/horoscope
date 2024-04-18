@@ -24,5 +24,39 @@
     <!--Messages-->
     <string name="error_message">Ocurrio un error inesperado!</string>
     <string name="share">Compartir</string>
+    <string name="title_share_prediction">Mi suerte es:</string>
+
+    <!--Predictions-->
+    <string name="prediction_1">Conocerás a alguien que cambiará tu vida de manera significativa.</string>
+    <string name="prediction_2">Tendrás la oportunidad de viajar a un lugar que siempre has deseado conocer.</string>
+    <string name="prediction_3">Experimentarás un momento de gran creatividad que te llevará a nuevos proyectos emocionantes.</string>
+    <string name="prediction_4">Recibirás una oferta de trabajo inesperada que te abrirá nuevas puertas.</string>
+    <string name="prediction_5">Conectarás con un viejo amigo y revivirán recuerdos entrañables juntos.</string>
+    <string name="prediction_6">Experimentarás un período de crecimiento personal y auto-descubrimiento.</string>
+    <string name="prediction_7">Tomarás una decisión importante que tendrá un impacto positivo en tu futuro.</string>
+    <string name="prediction_8">Superarás un obstáculo que te ha estado frenando y encontrarás una solución creativa.</string>
+    <string name="prediction_9">Experimentarás un cambio en tu entorno familiar que te llevará a valorar aún más tus seres queridos.</string>
+    <string name="prediction_10">Conocerás a alguien que te inspirará a seguir tus pasiones y perseguir tus sueños.</string>
+    <string name="prediction_11">Obtendrás reconocimiento por tu arduo trabajo y dedicación en tu campo.</string>
+    <string name="prediction_12">Descubrirás un nuevo hobby o interés que te apasionará profundamente.</string>
+    <string name="prediction_13">Te sentirás más seguro y seguro de ti mismo a medida que superes tus miedos.</string>
+    <string name="prediction_14">Experimentarás un momento de gran claridad mental que te ayudará a tomar decisiones importantes.</string>
+    <string name="prediction_15">Te sorprenderá gratamente el apoyo incondicional que recibirás de un ser querido en un momento difícil.</string>
+    <string name="prediction_16">Harás una nueva amistad que se convertirá en una fuente de alegría y compañerismo.</string>
+    <string name="prediction_17">Recibirás una sorpresa inesperada que te llenará de felicidad y gratitud.</string>
+    <string name="prediction_18">Te sentirás inspirado para hacer una contribución positiva a tu comunidad o al mundo en general.</string>
+    <string name="prediction_19">Experimentarás un período de buena salud y vitalidad que te permitirá disfrutar al máximo la vida.</string>
+    <string name="prediction_20">Aprenderás una lección valiosa de un error o fracaso pasado y crecerás a partir de esa experiencia.</string>
+    <string name="prediction_21">Te sentirás más conectado con tu intuición y encontrarás respuestas a preguntas que te han estado inquietando.</string>
+    <string name="prediction_22">Experimentarás un momento de renovación espiritual que te ayudará a encontrar un mayor sentido de propósito.</string>
+    <string name="prediction_23">Harás un viaje emocional que te llevará a comprender mejor tus deseos y necesidades.</string>
+    <string name="prediction_24">Te sentirás inspirado para hacer cambios positivos en tu estilo de vida que mejorarán tu bienestar general.</string>
+    <string name="prediction_25">Encontrarás el coraje para enfrentarte a una situación difícil y resolverla con gracia.</string>
+    <string name="prediction_26">Conectarás con alguien de tu pasado que te brindará una nueva perspectiva sobre tu vida.</string>
+    <string name="prediction_27">Experimentarás un encuentro fortuito que te llevará a una nueva oportunidad emocionante.</string>
+    <string name="prediction_28">Te sentirás más agradecido por las pequeñas cosas de la vida y encontrarás felicidad en los momentos simples.</string>
+    <string name="prediction_29">Descubrirás una nueva pasión o interés que te llevará por un camino emocionante.</string>
+    <string name="prediction_30">Recibirás el apoyo incondicional de tus seres queridos en un momento de necesidad.</string>
+    <string name="prediction_31">Te sentirás más conectado con tu propósito de vida y encontrarás dirección y claridad en tus metas y aspiraciones.</string>
 
 </resources>

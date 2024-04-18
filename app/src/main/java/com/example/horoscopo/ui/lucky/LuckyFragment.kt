@@ -1,6 +1,8 @@
 package com.example.horoscopo.ui.lucky
 
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,14 +16,20 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.example.horoscopo.R
 import com.example.horoscopo.databinding.FragmentLuckyBinding
+import com.example.horoscopo.ui.core.listeners.OnSwipeTouchListener
+import com.example.horoscopo.ui.model.RandomCardPrediction
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Random
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class LuckyFragment : Fragment() {
 
     private var _binding: FragmentLuckyBinding? = null
     private val binding get() = _binding!!
+
+    @Inject
+    lateinit var randomCardPrediction: RandomCardPrediction
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,29 +46,61 @@ class LuckyFragment : Fragment() {
     }
 
     private fun initUI() {
+        preparePrediction()
         initListeners()
     }
 
-    private fun initListeners() {
-        binding.ivCards.setOnClickListener{
-            spinRoulette()
+    private fun preparePrediction() {
+        val prediction = randomCardPrediction.getLuckyCard()
+        prediction?.let { luck ->
+            val textPrediction = getString(luck.cardPrediction)
+            //binding.ivCardPrediction.setImageResource(luck.cardImage)
+            binding.tvLuckyPrediction.text = textPrediction
+            binding.tvSharePrediction.setOnClickListener { shareLuckyPrediction(textPrediction) }
         }
+    }
+
+    private fun shareLuckyPrediction(textPrediction: String) {
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, textPrediction)
+            type = "text/plain"
+        }
+
+        val shareIntent =
+            Intent.createChooser(sendIntent, getString(R.string.title_share_prediction))
+        startActivity(shareIntent)
+    }
+
+
+    @SuppressLint("ClickableViewAccessibility")
+    private fun initListeners() {
+        binding.ivRouletteCards.setOnTouchListener(object : OnSwipeTouchListener(requireContext()){
+            override fun onSwipeRigth() {
+                spinRoulette()
+            }
+
+            override fun onSwipeLeft() {
+                spinRoulette()
+            }
+        })
     }
 
     private fun spinRoulette() {
         val spins = Random().nextInt(4)
-        val degreesRotation = if(spins == 0) 360 else spins * 360
-        val animator = ObjectAnimator.ofFloat(binding.ivCards,View.ROTATION,0f,degreesRotation.toFloat())
+        val degreesRotation = if (spins == 0) 360 else spins * 360
+        val animator =
+            ObjectAnimator.ofFloat(binding.ivRouletteCards, View.ROTATION, 0f, degreesRotation.toFloat())
         animator.duration = 2000
         animator.interpolator = DecelerateInterpolator()
         animator.doOnEnd { slideCard() }
         animator.start()
     }
 
-    private fun slideCard(){
+    private fun slideCard() {
         val slideUpAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.slide_up)
 
-        slideUpAnimation.setAnimationListener(object : Animation.AnimationListener{
+        slideUpAnimation.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {
                 binding.ivReverseCard.visibility = View.VISIBLE
             }
@@ -79,9 +119,9 @@ class LuckyFragment : Fragment() {
     }
 
     private fun growUpCard() {
-        val growUpAnimation = AnimationUtils.loadAnimation(requireContext(),R.anim.grow_card)
+        val growUpAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.grow_card)
 
-        growUpAnimation.setAnimationListener(object : Animation.AnimationListener{
+        growUpAnimation.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {
 
             }
@@ -100,14 +140,14 @@ class LuckyFragment : Fragment() {
         binding.ivReverseCard.startAnimation(growUpAnimation)
     }
 
-    private fun transitionCards(){
-        val disappearCardsAnimation = AlphaAnimation(1f,0f)
+    private fun transitionCards() {
+        val disappearCardsAnimation = AlphaAnimation(1f, 0f)
         disappearCardsAnimation.duration = 200
 
-        val appearPredictionAnimation = AlphaAnimation(0f,1f)
+        val appearPredictionAnimation = AlphaAnimation(0f, 1f)
         appearPredictionAnimation.duration = 500
 
-        disappearCardsAnimation.setAnimationListener(object :Animation.AnimationListener{
+        disappearCardsAnimation.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {
 
             }
